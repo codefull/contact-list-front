@@ -6,7 +6,7 @@ const initialState = {
   error: ""
 }
 
-export function contactsReducer(state = initialState, action:any) {
+export const contactsReducer = (state = initialState, action:any) => {
   switch(action.type) {
       case actionTypes.REQUEST_CONTACTS: 
           return {
@@ -33,3 +33,5 @@ export function contactsReducer(state = initialState, action:any) {
 export const getContacts = (state:any) => state.contacts;
 export const getContactsPending = (state:any) => state.pending;
 export const getContactsError = (state:any) => state.error;
+
+export default contactsReducer;
