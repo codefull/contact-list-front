@@ -25,3 +25,5 @@ export const fetchContacts = () => {
       })
   }
 }
+
+export default fetchContacts
