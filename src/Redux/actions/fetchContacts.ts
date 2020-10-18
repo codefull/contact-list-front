@@ -4,6 +4,7 @@ import {
   fetchContactsError,
 } from './contactActions'
 
+//TODO: Modify backend to take intoo account error results
 /**
  * @summary Action dispatched when a request for contacts loading is dispatched.
  */
