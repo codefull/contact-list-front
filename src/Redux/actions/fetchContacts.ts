@@ -9,8 +9,8 @@ import {
  * @summary Action dispatched when a request for contacts loading is dispatched.
  */
 export const fetchContacts = () => {
-  return (dispatch: any) => {
-    dispatch(requestContacts())
+    return (dispatch: any) => {
+        dispatch(requestContacts())
     return fetch(`localhost:3000/contact`)
       .then(response => response.json())
       .then(res => {
