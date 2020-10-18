@@ -1,0 +1,4 @@
+export const GET_ALL_CONTACTS = 'GET_ALL_CONTACTS'
+export const EDIT_CONTACT = 'EDIT_CONTACT'
+export const SAVE_CONTACT = 'SAVE_CONTACT'
+export const REMOVE_CONTACT = 'REMOVE_CONTACT'
