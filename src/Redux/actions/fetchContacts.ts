@@ -12,18 +12,6 @@ import axios from 'axios'
 export const fetchContacts = () => {
     return (dispatch: any) => {
         dispatch(requestContacts())
-    // return fetch(`http://localhost:3000/contact`)
-    //   .then(response => response.json())
-    //   .then(res => {
-    //     if (res.error) {
-    //       throw res.error
-    //     }
-    //     dispatch(fetchContactsSuccess(res.contacts))
-    //     return res.contacts
-    //   })
-    //   .catch(error => {
-    //     dispatch(fetchContactsError(error.message))
-    //   })
     return axios
     .get('http://localhost:3000/contact')
     .then(res => {
@@ -31,7 +19,7 @@ export const fetchContacts = () => {
       if (error) {
         throw error
       }
-      const contacts = res.data.data
+      const contacts = res.data
       dispatch(fetchContactsSuccess(contacts))
       return contacts;
     })
