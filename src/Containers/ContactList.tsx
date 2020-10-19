@@ -29,10 +29,10 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function ContactList() {
   const classes = useStyles()
   const dispatch = useDispatch()
-  const contacts = useSelector(state => getContacts(state))
+  const _state = useSelector(state => getContacts(state))
   const pending = useSelector(state => getContactsPending(state))
   const error = useSelector(state => getContactsError(state))
-
+console.log(`Lista de contactos: ${JSON.stringify( _state.contacts)}`)
   useEffect(() => {
     dispatch(fetchContactsAction())
   }, [dispatch])
@@ -44,14 +44,14 @@ export default function ContactList() {
     <h3>Loading...</h3>
   ) : (
     <List className={classes.root}>
-      {contacts.length &&
-        contacts.map((item: any) => {
+      { _state.contacts && _state.contacts.length &&
+         _state.contacts.map((item: any) => {
           return (
             <ListItem alignItems="flex-start">
               <ListItemAvatar>
                 <Avatar>
                   <img
-                    src="http://localhost:3000/profile-icon.jpg"
+                    src="http://localhost:3001/profile-icon.jpg"
                     alt="Avatar"
                   />
                 </Avatar>
